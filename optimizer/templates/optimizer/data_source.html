@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Source Table</title>
+</head>
+<body>
+    <h1>Data Source Table</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Pickup Company Name</th>
+                    <th>Pickup Address Line 1</th>
+                    <th>Pickup City</th>
+                    <th>Pickup Postcode</th>
+                    <th>Pickup Email</th>
+                    <th>Pickup Latitude</th>
+                    <th>Pickup Longitude</th>
+                    <th>Pickup Time From</th>
+                    <th>Pickup Time To</th>
+                    <th>Dropoff Company Name</th>
+                    <th>Dropoff Address Line 1</th>
+                    <th>Dropoff City</th>
+                    <th>Dropoff Postcode</th>
+                    <th>Dropoff Email</th>
+                    <th>Dropoff Latitude</th>
+                    <th>Dropoff Longitude</th>
+                    <th>Dropoff Time From</th>
+                    <th>Dropoff Time To</th>
+                    <th>Distance</th>
+                    <th>Google Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        <td>{{ row.pickup_company_name }}</td>
+                        <td>{{ row.pickup_address_line_1 }}</td>
+                        <td>{{ row.pickup_city }}</td>
+                        <td>{{ row.pickup_postcode }}</td>
+                        <td>{{ row.pickup_email }}</td>
+                        <td>{{ row.pickup_lat }}</td>
+                        <td>{{ row.pickup_lng }}</td>
+                        <td>{{ row.pickup_time_from }}</td>
+                        <td>{{ row.pickup_time_to }}</td>
+                        <td>{{ row.dropoff_company_name }}</td>
+                        <td>{{ row.dropoff_address_line_1 }}</td>
+                        <td>{{ row.dropoff_city }}</td>
+                        <td>{{ row.dropoff_postcode }}</td>
+                        <td>{{ row.dropoff_email }}</td>
+                        <td>{{ row.dropoff_lat }}</td>
+                        <td>{{ row.dropoff_lng }}</td>
+                        <td>{{ row.dropoff_time_from }}</td>
+                        <td>{{ row.dropoff_time_to }}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
